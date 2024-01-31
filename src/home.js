@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { getBrandName } from "./utils";
 
 const Home = () => {
+  const brandName = getBrandName()
  
   return (
     <div>
-      <h2>Home Page for Clas Application</h2>
+    <span className="brandName">{brandName}</span>
+      <p className="para">Home Page for Clas Application</p>
     </div>
   );
 };

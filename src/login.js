@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { setToken } from "./utils";
-import { PORT } from "./config";
+import { API_URL } from "./config";
+import './login.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -17,7 +19,7 @@ const Login = () => {
     console.log("Password:", password);
     try{
     const result = await axios.post(
-      `${PORT}/api/login`,
+      `${API_URL}/api/login`,
       {
         username,
         password,
@@ -47,31 +49,43 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2 className="loginText">Login Page</h2>
+    <section className="login">
+    <div className="content">
+    <div className="heading">
+    <p>Clas App Login</p>
+    </div>
       <form onSubmit={handleLogin}>
-        <label>
+      <div className={`form-group, position-relative`}>
+        <label >
           Username:
           <input
             type="text"
             value={username}
+            className={'form-control'}
+            placeholder="Enter Email"
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
-        <br />
+        </div>
+        <div className={`form-group, position-relative`}>
         <label>
           Password:
           <input
             type="password"
             value={password}
+            className={'form-control'}
+            placeholder="************"
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <br />
-        <button type="submit">Login</button>
+        </div>
+        <button type="submit"
+        className={`btn-theme, button`}
+        >Login</button>
       </form>
       {error && <p className="error-message">{error}</p>}
     </div>
+    </section>
   );
 };
 
