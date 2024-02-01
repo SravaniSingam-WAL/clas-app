@@ -84,3 +84,12 @@ button:hover {
   .logout:hover{
     background-color: #3fd64c;
   }
+  .para{
+    margin-top: 20px;
+  }
+    .welcomeText{
+      margin-top: 20px;
+      color: green;
+      font-size: 26px;
+      font-weight: 400;
+    }

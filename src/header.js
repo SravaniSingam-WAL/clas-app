@@ -13,7 +13,7 @@ const Header =() => {
     }
   return (
    <div className='navBar'>
-    <div className='brand'>{brandName}Hello</div>
+    <div className='brand'>{brandName}</div>
     <button className='logout' onClick={()=>logout()}>Logout</button>
     </div>
   );

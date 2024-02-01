@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { getBrandName } from "./utils";
+import { getName } from "./utils";
 
 const Home = () => {
-  const brandName = getBrandName()
- 
+  const name = getName()
+
   return (
     <div>
+    <h4 className="welcomeText">Welcome {name}! welcome to the Clas app.</h4>
       <p className="para">Home Page for Clas Application</p>
     </div>
   );

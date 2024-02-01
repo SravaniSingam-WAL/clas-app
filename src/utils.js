@@ -20,4 +20,9 @@ export const getBrandName = () => {
 export const setToken = (userDetails) => {
     localStorage.setItem('user', JSON.stringify(userDetails));   
 };
+export const getName = () => {
+    const { name } =  JSON.parse(localStorage.getItem('user') || '{}');
+    return name || '';
+};
+
     
